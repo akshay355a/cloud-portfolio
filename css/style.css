@@ -25,7 +25,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--paper);
+  background-color: #dbe8f9;
+  background-image:
+    linear-gradient(to right, rgba(82, 128, 204, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(82, 128, 204, 0.18) 1px, transparent 1px);
+  background-size: 55px 55px;
   color: var(--ink);
   font-family: 'DM Sans', Arial, sans-serif;
   line-height: 1.5;
@@ -70,7 +74,7 @@ button:focus-visible {
   min-height: 100vh;
   margin: 0;
   position: relative;
-  background: var(--paper);
+  background: transparent;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -83,7 +87,7 @@ button:focus-visible {
   top: 0;
   z-index: 100;
   width: 100%;
-  background: rgba(255, 251, 247, 0.95);
+  background: rgba(219, 232, 249, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: var(--line);
@@ -394,6 +398,7 @@ button:focus-visible {
 .term-out {
   margin-left: 18px;
   line-height: 1.5;
+  color: #eaeaea;
 }
 
 .term-accent {
@@ -410,6 +415,11 @@ button:focus-visible {
   font-size: 0.78rem;
 }
 
+.term-muted {
+  color: #8f8f8f;
+  font-weight: 400;
+}
+
 .term-list {
   list-style: none;
   margin: 0 0 2px 18px;
@@ -420,19 +430,11 @@ button:focus-visible {
 }
 
 .term-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  border-bottom: 1px dashed #343434;
+  display: block;
   padding: 2px 0;
   color: #d8d8d8;
   font-size: 0.79rem;
-}
-
-.term-check {
-  color: #66f59f;
-  font-weight: 700;
+  border-bottom: 1px dashed #343434;
 }
 
 .term-cursor {
@@ -456,18 +458,6 @@ button:focus-visible {
   100% {
     opacity: 0;
   }
-}
-
-.term-replay-btn {
-  align-self: flex-end;
-  background: #242424;
-  border: 1px solid #444;
-  border-radius: 6px;
-  color: #999;
-  font: 600 0.68rem 'DM Mono', monospace;
-  padding: 4px 10px;
-  cursor: pointer;
-  margin-top: auto;
 }
 
 /* About Section */

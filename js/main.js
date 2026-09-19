@@ -32,7 +32,7 @@
         cmd: 'whoami',
         typeSpeed: 42,
         postDelay: 220,
-        outputHtml: `<div class="term-out term-accent">akshay@cloud <span style="color:#8f8f8f;font-weight:400;">(Cloud / DevOps Engineer)</span></div>`
+        outputHtml: `<div class="term-out term-accent">akshay@cloud <span class="term-muted">(Cloud / DevOps Engineer)</span></div>`
       },
       {
         cmd: 'stack --featured',
@@ -40,10 +40,10 @@
         postDelay: 260,
         outputHtml: `
           <ul class="term-list">
-            <li><span>AWS (EKS, VPC, RDS, IAM)</span><span class="term-check">✓</span></li>
-            <li><span>Terraform (IaC Automation)</span><span class="term-check">✓</span></li>
-            <li><span>Kubernetes &amp; Docker</span><span class="term-check">✓</span></li>
-            <li><span>CI/CD (Jenkins, Trivy, SonarQube)</span><span class="term-check">✓</span></li>
+            <li>AWS (EKS, VPC, RDS, IAM)</li>
+            <li>Terraform (IaC Automation)</li>
+            <li>Kubernetes &amp; Docker</li>
+            <li>CI/CD (Jenkins, Trivy, SonarQube)</li>
           </ul>
         `
       },
@@ -66,7 +66,6 @@
       for (let i = 0; i < text.length; i++) {
         if (sessionId !== currentSession) return false;
         element.textContent += text[i];
-        // subtle human-like typing jitter
         const jitter = Math.random() * 20 - 10;
         await sleep(Math.max(15, speed + jitter));
       }
@@ -77,14 +76,12 @@
       const sessionId = ++currentSession;
       terminalBody.innerHTML = '';
 
-      // Initial short pause before starting first command
       await sleep(300);
       if (sessionId !== currentSession) return;
 
       for (let i = 0; i < commands.length; i++) {
         const item = commands[i];
 
-        // Create command line container
         const lineEl = document.createElement('div');
         lineEl.className = 'term-line';
 
@@ -97,49 +94,31 @@
         const textSpan = cmdEl.querySelector('.term-cmd-text');
         const cursorSpan = cmdEl.querySelector('.term-cursor');
 
-        // Type command character by character
         const finished = await typeText(textSpan, item.cmd, item.typeSpeed, sessionId);
         if (!finished) return;
 
-        // Pause before hitting enter & executing command
         await sleep(item.postDelay);
         if (sessionId !== currentSession) return;
 
-        // Remove cursor from this completed command
         if (cursorSpan) cursorSpan.remove();
 
-        // Render command execution output
         const outputWrapper = document.createElement('div');
         outputWrapper.innerHTML = item.outputHtml;
         lineEl.appendChild(outputWrapper);
 
-        // Scroll into view if needed
         terminalBody.scrollTop = terminalBody.scrollHeight;
 
-        // Pause between commands
         await sleep(350);
         if (sessionId !== currentSession) return;
       }
 
-      // Final active prompt with blinking cursor and replay button
+      // Final active prompt with blinking cursor
       const finalLine = document.createElement('div');
       finalLine.className = 'term-line';
       finalLine.style.marginTop = '4px';
-      finalLine.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
-          <div class="term-cmd"><span class="term-prompt">$</span><span class="term-cursor"></span></div>
-          <button class="term-replay-btn" type="button" aria-label="Replay terminal animation">↺ rerun</button>
-        </div>
-      `;
+      finalLine.innerHTML = `<div class="term-cmd"><span class="term-prompt">$</span><span class="term-cursor"></span></div>`;
       terminalBody.appendChild(finalLine);
       terminalBody.scrollTop = terminalBody.scrollHeight;
-
-      const replayBtn = finalLine.querySelector('.term-replay-btn');
-      if (replayBtn) {
-        replayBtn.addEventListener('click', () => {
-          runTerminal();
-        });
-      }
 
       // Auto-restart after 8 seconds of idle
       await sleep(8000);
