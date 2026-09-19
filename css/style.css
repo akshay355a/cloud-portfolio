@@ -138,12 +138,18 @@ button:focus-visible {
 .nav-cta {
   background: var(--blue);
   color: var(--ink) !important;
-  padding: 11px 22px;
+  padding: 10px 22px;
   border: var(--line);
   border-radius: 999px;
   box-shadow: 4px 4px 0 var(--ink);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 700;
+}
+
+.nav-cta svg {
+  flex-shrink: 0;
 }
 
 .menu-toggle {
