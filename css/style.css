@@ -903,7 +903,7 @@ button:focus-visible {
 /* Minimal Dark Footer */
 .footer {
   width: 100%;
-  padding: 42px 24px;
+  padding: 32px 24px;
   background: #0f0f10;
   border-top: var(--line);
   color: #a8a8a8;
@@ -915,11 +915,11 @@ button:focus-visible {
   width: min(100%, var(--max));
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
-  text-align: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .footer-copy {
@@ -928,12 +928,13 @@ button:focus-visible {
   font-size: 0.92rem;
   font-weight: 500;
   letter-spacing: -0.01em;
+  text-align: left;
 }
 
 .footer-socials {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 22px;
 }
 
