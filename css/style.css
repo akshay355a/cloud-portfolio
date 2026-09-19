@@ -502,90 +502,6 @@ button:focus-visible {
   background: #2e2e2e;
 }
 
-.floating-card {
-  position: absolute;
-  border: var(--line);
-  box-shadow: var(--shadow-sm);
-  border-radius: 12px;
-  padding: 11px 16px;
-  font-weight: 800;
-  font-size: 0.75rem;
-  z-index: 3;
-}
-
-.floating-card--status {
-  left: 2%;
-  top: 6%;
-  background: var(--teal);
-  transform: rotate(-5deg);
-}
-
-.status-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
-  background: #67f092;
-  margin-right: 7px;
-}
-
-.name-sticker {
-  position: absolute;
-  right: -5px;
-  top: 10%;
-  background: var(--blue);
-  border: var(--line);
-  border-radius: 999px;
-  padding: 11px 20px;
-  box-shadow: var(--shadow-sm);
-  font: 700 1rem 'Space Grotesk', sans-serif;
-  z-index: 4;
-  transform: rotate(5deg);
-}
-
-.hero-badge {
-  position: absolute;
-  border: var(--line);
-  border-radius: 14px;
-  padding: 12px 14px;
-  box-shadow: var(--shadow-sm);
-  font: 700 0.72rem / 1.15 'DM Mono', monospace;
-  z-index: 3;
-}
-
-.hero-badge--blue {
-  left: 4%;
-  bottom: 6%;
-  background: var(--blue);
-  transform: rotate(-5deg);
-}
-
-.hero-badge--pink {
-  right: 6%;
-  bottom: 2%;
-  background: var(--pink);
-  transform: rotate(5deg);
-}
-
-.spark {
-  position: absolute;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.spark--1 {
-  right: 6%;
-  top: 26%;
-}
-
-.spark--2 {
-  left: 10%;
-  bottom: 28%;
-  transform: rotate(18deg);
-  color: var(--pink);
-}
-
 /* About Section */
 .about-layout {
   display: grid;
@@ -1419,36 +1335,6 @@ button:focus-visible {
 
   .code-card {
     transform: none;
-  }
-
-  .floating-card--status {
-    left: 0;
-    top: 0;
-  }
-
-  .name-sticker {
-    right: 0;
-    top: 0;
-  }
-
-  .hero-badge--blue {
-    left: 0;
-    bottom: 10px;
-  }
-
-  .hero-badge--pink {
-    right: 0;
-    bottom: -10px;
-  }
-
-  .spark--1 {
-    right: 4%;
-    top: 25%;
-  }
-
-  .spark--2 {
-    left: 4%;
-    bottom: 30%;
   }
 
   .stats {
