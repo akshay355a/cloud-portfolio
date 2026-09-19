@@ -53,7 +53,7 @@
         postDelay: 240,
         outputHtml: `
           <div class="term-out term-log">[ok] cluster: healthy (us-east-1)</div>
-          <div class="term-out term-good">status: deployment_ready=true 🚀</div>
+          <div class="term-out term-good">status: deployment_ready=true</div>
         `
       }
     ];

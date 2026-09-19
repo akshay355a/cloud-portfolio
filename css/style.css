@@ -177,6 +177,8 @@ button:focus-visible {
 
 /* Sections Common */
 .section {
+  position: relative;
+  z-index: 2;
   width: min(calc(100% - 48px), var(--max));
   margin: 0 auto;
   padding: 100px 0;
@@ -1091,31 +1093,38 @@ button:focus-visible {
   border-bottom-color: var(--ink);
 }
 
-/* Ambient Live Floating Neo-Brutalist Shapes */
+/* Ambient Live Floating Neo-Brutalist Shapes - Shown strictly in spacious gutters on wide screens (>= 1400px) */
 .decor {
+  display: none;
   position: absolute;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
-.decor--left {
-  left: 20px;
-  top: 360px;
-}
+@media (min-width: 1400px) {
+  .decor {
+    display: block;
+  }
 
-.decor--right {
-  right: 24px;
-  top: 720px;
-}
+  .decor--left {
+    left: 28px;
+    top: 360px;
+  }
 
-.decor--bottom-left {
-  left: 26px;
-  top: 1420px;
-}
+  .decor--right {
+    right: 28px;
+    top: 720px;
+  }
 
-.decor--bottom-right {
-  right: 22px;
-  top: 1980px;
+  .decor--bottom-left {
+    left: 28px;
+    top: 1420px;
+  }
+
+  .decor--bottom-right {
+    right: 28px;
+    top: 1980px;
+  }
 }
 
 .blob {
