@@ -1,142 +1,237 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <title>Akshay — Cloud Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrap" id="top">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0f14">
-  <meta name="description"
-    content="Akshay P — Cloud Engineer focused on AWS, DevOps, Kubernetes, Terraform and secure cloud infrastructure.">
-  <title>Akshay's Portfolio</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/main.js"></script>
-</head>
+      <div class="topstrip mono">
+        <span class="name">Akshay</span>
+        <nav aria-label="Sections">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <span>Mangaluru, IN — <span id="clock">--:--</span> IST</span>
+      </div>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+      <header class="hero">
+        <h1 aria-label="Akshay">
+          <span class="row"><span>Akshay</span></span>
+        </h1>
+        <p class="statement">
+          Cloud engineer keeping AWS systems <em>running</em> — infrastructure,
+          automation and support, done properly.
+        </p>
+        <div class="hero-meta mono">
+          <span><span class="dot">●</span>&nbsp; System Administrator Apprentice — Robosoft Technologies</span>
+          <span>Based in Mangaluru, India</span>
+          <a href="#work">Selected work ↓</a>
+        </div>
+      </header>
 
-  <header class="site-header" id="top">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Akshay home">
-        <img class="brand-pfp" src="assets/avatar.png" alt="Akshay avatar" width="32" height="32">
-        <span>Akshay P</span>
-      </a>
+      <section id="about" aria-labelledby="about-h">
+        <div class="sec-head">
+          <span class="num mono">01</span>
+          <h2 id="about-h">About</h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p class="about-lede">
+              I work where systems meet the people who depend on them —
+              keeping infrastructure <em>reliable</em>, not just deployed.
+            </p>
+            <p class="about-body">
+              I’m a Cloud Engineer with a BCA in Artificial Intelligence,
+              currently working as a System Administrator Apprentice at
+              Robosoft Technologies. I work across infrastructure, IAM,
+              networking, monitoring, CI/CD, and containerized deployments,
+              with hands-on AWS project experience.
+            </p>
+          </div>
+          <dl class="facts">
+            <div>
+              <dt>Currently</dt>
+              <dd>System Administrator Apprentice, Robosoft Technologies</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>AWS infrastructure, DevOps, IT support</dd>
+            </div>
+            <div>
+              <dt>Education</dt>
+              <dd>BCA — Artificial Intelligence, 2023–2026</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>Mangaluru, India</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <section id="skills" aria-labelledby="skills-h">
+        <div class="sec-head">
+          <span class="num mono">02</span>
+          <h2 id="skills-h">Skills</h2>
+        </div>
+        <div class="ledger">
+          <div class="ledger-row">
+            <div>
+              <h3>Cloud &amp; Infrastructure</h3>
+              <p class="stack">AWS · EC2 · S3 · RDS · Auto Scaling · Terraform · IAM · Route 53</p>
+            </div>
+            <p class="proof">
+              <strong>Proof:</strong> TechStore — a three-tier AWS deployment
+              on VPC with EC2, ALB, Auto Scaling, RDS MySQL, Route 53 and IAM.
+            </p>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <h3>DevOps &amp; Delivery</h3>
+              <p class="stack">Docker · Kubernetes · Amazon EKS · Jenkins · SonarQube · Trivy · GitHub</p>
+            </div>
+            <p class="proof">
+              <strong>Proof:</strong> a containerized React app shipped to
+              Amazon EKS through a Jenkins pipeline with SonarQube analysis
+              and Trivy scanning built in.
+            </p>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <h3>Systems &amp; Monitoring</h3>
+              <p class="stack">Linux · Bash · Python · CloudWatch · SNS · Secrets Manager · SSM</p>
+            </div>
+            <p class="proof">
+              <strong>Proof:</strong> day-to-day system administration and IT
+              support at Robosoft Technologies, since October 2026.
+            </p>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <h3>Application Stack</h3>
+              <p class="stack">Node.js · Express · REST APIs · SQL · MySQL · JWT</p>
+            </div>
+            <p class="proof">
+              <strong>Proof:</strong> the APIs and data layers behind the
+              projects below — services, authentication and databases wired
+              into the deployments, not demos.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <section id="work" aria-labelledby="work-h">
+        <div class="sec-head">
+          <span class="num mono">03</span>
+          <h2 id="work-h">Selected Work</h2>
+        </div>
+
+        <a class="proj" href="https://github.com/akshay355a/netflix-devsecops-eks" target="_blank" rel="noopener">
+          <div class="p-top">
+            <span class="p-num">01</span>
+            <h3>Netflix Clone — DevSecOps</h3>
+          </div>
+          <div class="p-meta">
+            <span class="p-desc">Containerized React deployment on Amazon EKS with a Jenkins pipeline, SonarQube analysis, and Trivy scanning.</span>
+            <span class="p-link">View on GitHub <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <a class="proj" href="https://github.com/akshay355a/TechStore-AWS" target="_blank" rel="noopener">
+          <div class="p-top">
+            <span class="p-num">02</span>
+            <h3>TechStore E-Commerce</h3>
+          </div>
+          <div class="p-meta">
+            <span class="p-desc">Three-tier AWS deployment using VPC, EC2, ALB, Auto Scaling, RDS MySQL, Route 53, and IAM.</span>
+            <span class="p-link">View on GitHub <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <a class="proj" href="https://github.com/akshay355a/MultiDiseaseRiskPrediction" target="_blank" rel="noopener">
+          <div class="p-top">
+            <span class="p-num">03</span>
+            <h3>Multi-Disease Prediction</h3>
+          </div>
+          <div class="p-meta">
+            <span class="p-desc">Machine learning-based prediction platform using Python, scikit-learn, Flask, Mistral LLM, and PyMuPDF.</span>
+            <span class="p-link">View on GitHub <span class="arr">↗</span></span>
+          </div>
+        </a>
+      </section>
+
+      <section id="experience" aria-labelledby="xp-h">
+        <div class="sec-head">
+          <span class="num mono">04</span>
+          <h2 id="xp-h">Experience</h2>
+        </div>
+        <div class="xp">
+          <div class="xp-row">
+            <span class="when">Oct 2026 — Present <span class="now">● Now</span></span>
+            <h3>System Administrator Apprentice <span class="org">Robosoft Technologies</span></h3>
+            <p>Working in system administration and IT support.</p>
+          </div>
+          <div class="xp-row">
+            <span class="when">Sep 2024 — Oct 2024</span>
+            <h3>AI/ML Intern <span class="org">Elewayte</span></h3>
+            <p>Built and evaluated supervised ML models, performed EDA, and collaborated through Git workflows.</p>
+          </div>
+        </div>
+
+        <p class="subhead">Certifications &amp; Education</p>
+        <div class="cred">
+          <div class="cred-row">
+            <span class="c-name">AWS Certified Cloud Practitioner</span>
+            <span class="c-by">Amazon Web Services</span>
+          </div>
+          <div class="cred-row">
+            <span class="c-name">Introduction to Python</span>
+            <span class="c-by">IBM</span>
+          </div>
+          <div class="cred-row">
+            <span class="c-name">BCA — Artificial Intelligence</span>
+            <span class="c-by">Dr. B. B. Hegde First Grade College, Mangaluru · 2023–2026</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="contact" id="contact">
+        <span class="num mono">05 — Contact</span>
+        <p class="big"><a href="https://github.com/akshay355a" target="_blank" rel="noopener">Say hello ↗</a></p>
+        <p class="note">
+          The fastest way to reach me is through GitHub — my work, my
+          projects, and the best place to start a conversation about cloud,
+          infrastructure, or support roles.
+        </p>
+        <div class="socials">
+          <a href="https://github.com/akshay355a" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
+          <a href="https://akshayp.in" target="_blank" rel="noopener">akshayp.in <span class="arr">↗</span></a>
+        </div>
+      </div>
+
+      <footer class="mono">
+        <span>© 2026 Akshay</span>
+        <span>Mangaluru, India — <span id="clock2">--:--</span> IST</span>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+
     </div>
-  </header>
 
-  <main id="main">
-    <section class="hero container" aria-labelledby="hero-title">
-      <p class="eyebrow">Cloud Engineer</p>
-      <h1 id="hero-title">Building secure, scalable cloud systems.</h1>
-      <p class="lead">I work on AWS infrastructure, DevOps workflows, Kubernetes deployments, and Linux automation with a focus on reliability and practical delivery.</p>
-      <div class="actions">
-        <a class="button" href="#projects">View projects</a>
-        <a class="button button-secondary" href="https://github.com/AKSHAY355a" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </section>
-
-    <section class="section container" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p>I’m a Cloud Engineer with a BCA in Artificial Intelligence, currently working as a System Administrator Apprentice at Robosoft Technologies. I work across infrastructure, IAM, networking, monitoring, CI/CD, and containerized deployments, with hands-on AWS project experience.</p>
-    </section>
-
-    <section class="section container" id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3>Cloud & Infrastructure</h3>
-          <p>AWS, EC2, S3, RDS, Auto Scaling, Terraform, IAM, Route 53</p>
-        </article>
-        <article class="card">
-          <h3>DevOps & Delivery</h3>
-          <p>Docker, Kubernetes, Amazon EKS, Jenkins, SonarQube, Trivy, GitHub</p>
-        </article>
-        <article class="card">
-          <h3>Systems & Monitoring</h3>
-          <p>Linux, Bash, Python, CloudWatch, SNS, Secrets Manager, SSM</p>
-        </article>
-        <article class="card">
-          <h3>Application Stack</h3>
-          <p>Node.js, Express, REST APIs, SQL, MySQL, JWT</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <div class="grid three">
-        <article class="card">
-          <h3>Netflix Clone DevSecOps Deployment</h3>
-          <p>Containerized React deployment on Amazon EKS with a Jenkins pipeline, SonarQube analysis, and Trivy scanning.</p>
-          <a href="https://github.com/akshay355a/netflix-devsecops-eks" target="_blank" rel="noreferrer">View on GitHub</a>
-        </article>
-        <article class="card">
-          <h3>TechStore E-Commerce Platform</h3>
-          <p>Three-tier AWS deployment using VPC, EC2, ALB, Auto Scaling, RDS MySQL, Route 53, and IAM.</p>
-          <a href="https://github.com/akshay355a/TechStore-AWS" target="_blank" rel="noreferrer">View on GitHub</a>
-        </article>
-        <article class="card">
-          <h3>Multi-Disease Prediction System</h3>
-          <p>Machine learning-based prediction platform using Python, scikit-learn, Flask, Mistral LLM, and PyMuPDF.</p>
-          <a href="https://github.com/akshay355a/MultiDiseaseRiskPrediction" target="_blank" rel="noreferrer">View on GitHub</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience & Certifications</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3>System Administrator Apprentice — Robosoft Technologies</h3>
-          <p>Oct 2026 — Present · Working in system administration and IT support.</p>
-        </article>
-        <article class="card">
-          <h3>AI/ML Intern — Elewayte</h3>
-          <p>Sep 2024 — Oct 2024 · Built and evaluated supervised ML models, performed EDA, and collaborated through Git workflows.</p>
-        </article>
-        <article class="card">
-          <h3>AWS Certified Cloud Practitioner</h3>
-          <p>Credential by Amazon Web Services covering cloud fundamentals, architecture, security, and billing models.</p>
-        </article>
-        <article class="card">
-          <h3>Introduction to Python (IBM)</h3>
-          <p>Foundational Python programming, control flow, data structures, and scripting for technical workflows.</p>
-        </article>
-        <article class="card">
-          <h3>BCA — Artificial Intelligence</h3>
-          <p>Dr. B. B. Hegde First Grade College, Mangaluru (2023–2026).</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" id="contact">
-    <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Akshay P</p>
-      <div class="footer-links">
-        <a href="https://github.com/AKSHAY355a" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/akshay355a" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:akshay355a@gmail.com">Email</a>
-      </div>
-    </div>
-  </footer>
-</body>
-
+    <script src="js/main.js" defer></script>
+  </body>
 </html>
