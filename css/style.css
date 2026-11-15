@@ -276,8 +276,11 @@
         text-transform: uppercase;
         text-decoration: none;
         padding: 10px 0;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
       }
+      .socials .ic { width: 15px; height: 15px; flex: none; }
       .socials a:hover { color: var(--accent); }
       .socials a .arr { color: var(--accent); }
       footer {
