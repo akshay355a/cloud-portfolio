@@ -224,7 +224,8 @@
       .xp-row .when { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-dim); }
       .xp-row .when .now { color: var(--accent); }
       .xp-row h3 { margin: 0; font-size: 20px; font-weight: 700; }
-      .xp-row h3 .org { display: block; font-weight: 500; color: var(--ink-dim); font-size: 16.5px; margin-top: 2px; }
+      .xp-row h3 .org { display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--ink-dim); font-size: 16.5px; margin-top: 6px; }
+      .org-logo { width: 34px; height: 34px; flex: none; }
       .xp-row p { margin: 0; color: var(--ink-dim); font-size: 15.5px; }
       .subhead {
         margin: clamp(44px, 6vw, 72px) 0 0;
