@@ -42,3 +42,56 @@ if (hpToggle && hpSection) {
     }
   });
 }
+
+// Butter-smooth scrolling for desktop mouse wheels. The wheel is eased
+// toward its target with requestAnimationFrame, so scrolling glides
+// instead of jumping notch by notch. Touch devices keep the phone's
+// own native momentum scrolling, which is already smooth, and anchor
+// links glide via the CSS scroll-behavior.
+(function () {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var finePointer = window.matchMedia("(pointer: fine)").matches;
+  if (reduceMotion || !finePointer) return;
+
+  var root = document.documentElement;
+  var target = window.scrollY;
+  var current = window.scrollY;
+  var raf = null;
+
+  function stop() {
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+    root.style.scrollBehavior = "";
+    target = window.scrollY;
+    current = window.scrollY;
+  }
+
+  function step() {
+    current += (target - current) * 0.12;
+    if (Math.abs(target - current) < 0.5) {
+      window.scrollTo(0, target);
+      stop();
+      return;
+    }
+    window.scrollTo(0, current);
+    raf = requestAnimationFrame(step);
+  }
+
+  window.addEventListener("wheel", function (e) {
+    if (e.target instanceof Element && e.target.closest("[data-native-scroll]")) return;
+    e.preventDefault();
+    root.style.scrollBehavior = "auto";
+    target += e.deltaY;
+    var max = root.scrollHeight - window.innerHeight;
+    if (target < 0) target = 0;
+    if (target > max) target = max;
+    if (!raf) {
+      current = window.scrollY;
+      raf = requestAnimationFrame(step);
+    }
+  }, { passive: false });
+
+  // Let the user take over instantly with keys, touch, or the scrollbar.
+  ["touchstart", "keydown", "mousedown"].forEach(function (evt) {
+    window.addEventListener(evt, stop, { passive: true });
+  });
+})();
