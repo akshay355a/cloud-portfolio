@@ -296,6 +296,11 @@
       footer a { text-decoration: none; padding: 6px 0; display: inline-block; }
       footer a:hover { color: var(--accent); }
 
+      /* hidden projects: off until the footer link reveals them */
+      #hidden-projects[hidden] { display: none; }
+      footer button { background: none; border: 0; font: inherit; color: inherit; padding: 6px 0; cursor: pointer; }
+      footer button:hover { color: var(--accent); }
+
       /* ---------- the one motion: hero lines settle in ---------- */
       @keyframes rise {
         from { transform: translateY(110%); }
