@@ -49,10 +49,12 @@ if (hpToggle && hpSection) {
 // own native momentum scrolling, which is already smooth, and anchor
 // links glide via the CSS scroll-behavior.
 //
-// The glide is time-based (not per-frame), so it feels the same on
-// 60 Hz and 144 Hz screens: each frame covers a fraction of the
-// remaining distance set by a ~160 ms time constant, giving a long
-// silky ease-out instead of a quick stop.
+// The glide is a critically damped spring, not a plain lerp: a lerp
+// jumps to full speed the instant you touch the wheel, which is what
+// makes it feel steppy. The spring starts at zero speed, speeds up
+// gently, then slows down gently into place — no sudden kicks, no
+// overshoot. It is time-based, so it feels the same on 60 Hz and
+// 144 Hz screens.
 (function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -61,23 +63,28 @@ if (hpToggle && hpSection) {
   var root = document.documentElement;
   var target = window.scrollY;
   var current = window.scrollY;
+  var velocity = 0;
   var raf = null;
   var last = 0;
-  var TAU = 160; // ms: larger = longer, silkier glide
+
+  var STIFFNESS = 70; // lower = longer, silkier glide
+  var DAMPING = 2 * Math.sqrt(STIFFNESS); // critical damping: no overshoot
 
   function stop() {
     if (raf) { cancelAnimationFrame(raf); raf = null; }
     root.style.scrollBehavior = "";
     target = window.scrollY;
     current = window.scrollY;
+    velocity = 0;
   }
 
   function step(now) {
-    var dt = Math.min(now - last, 50);
+    var dt = Math.min((now - last) / 1000, 0.05); // seconds, clamped
     last = now;
-    var k = 1 - Math.exp(-dt / TAU);
-    current += (target - current) * k;
-    if (Math.abs(target - current) < 0.1) {
+    var accel = STIFFNESS * (target - current) - DAMPING * velocity;
+    velocity += accel * dt;
+    current += velocity * dt;
+    if (Math.abs(target - current) < 0.5 && Math.abs(velocity) < 10) {
       window.scrollTo(0, target);
       stop();
       return;
