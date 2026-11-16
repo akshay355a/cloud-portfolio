@@ -6,7 +6,7 @@
         --ink-faint: #7d7468;
         --line: #38302a;
         --accent: #e85d2a;
-        --display: "Archivo", "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif;
+        --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
         --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
       }
       * { box-sizing: border-box; }
