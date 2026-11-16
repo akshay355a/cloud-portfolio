@@ -48,6 +48,11 @@ if (hpToggle && hpSection) {
 // instead of jumping notch by notch. Touch devices keep the phone's
 // own native momentum scrolling, which is already smooth, and anchor
 // links glide via the CSS scroll-behavior.
+//
+// The glide is time-based (not per-frame), so it feels the same on
+// 60 Hz and 144 Hz screens: each frame covers a fraction of the
+// remaining distance set by a ~160 ms time constant, giving a long
+// silky ease-out instead of a quick stop.
 (function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -57,6 +62,8 @@ if (hpToggle && hpSection) {
   var target = window.scrollY;
   var current = window.scrollY;
   var raf = null;
+  var last = 0;
+  var TAU = 160; // ms: larger = longer, silkier glide
 
   function stop() {
     if (raf) { cancelAnimationFrame(raf); raf = null; }
@@ -65,9 +72,12 @@ if (hpToggle && hpSection) {
     current = window.scrollY;
   }
 
-  function step() {
-    current += (target - current) * 0.12;
-    if (Math.abs(target - current) < 0.5) {
+  function step(now) {
+    var dt = Math.min(now - last, 50);
+    last = now;
+    var k = 1 - Math.exp(-dt / TAU);
+    current += (target - current) * k;
+    if (Math.abs(target - current) < 0.1) {
       window.scrollTo(0, target);
       stop();
       return;
@@ -80,12 +90,16 @@ if (hpToggle && hpSection) {
     if (e.target instanceof Element && e.target.closest("[data-native-scroll]")) return;
     e.preventDefault();
     root.style.scrollBehavior = "auto";
-    target += e.deltaY;
+    var dy = e.deltaY;
+    if (e.deltaMode === 1) dy *= 16; // lines -> pixels
+    else if (e.deltaMode === 2) dy *= window.innerHeight; // pages -> pixels
+    target += dy;
     var max = root.scrollHeight - window.innerHeight;
     if (target < 0) target = 0;
     if (target > max) target = max;
     if (!raf) {
       current = window.scrollY;
+      last = performance.now();
       raf = requestAnimationFrame(step);
     }
   }, { passive: false });
