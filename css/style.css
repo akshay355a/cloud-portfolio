@@ -71,10 +71,13 @@
         display: inline-block;
         color: transparent;
         background:
-          radial-gradient(circle at 24% 80%, #ffd000 0 19%, transparent 22%),
-          radial-gradient(circle at 74% 26%, #ff7a00 0 21%, transparent 24%),
-          radial-gradient(circle at 50% 58%, #ff0066 0 23%, transparent 26%),
-          radial-gradient(circle at 12% 30%, #ff2d00 0 17%, transparent 20%),
+          radial-gradient(circle at 32% 46%, #fff2a8 0 12%, transparent 15%),
+          radial-gradient(circle at 78% 72%, #ff7b00 0 18%, transparent 21%),
+          radial-gradient(circle at 60% 18%, #ff2d6f 0 15%, transparent 18%),
+          radial-gradient(circle at 24% 80%, #ffd000 0 16%, transparent 19%),
+          radial-gradient(circle at 74% 26%, #ff7a00 0 18%, transparent 21%),
+          radial-gradient(circle at 50% 58%, #ff0066 0 20%, transparent 23%),
+          radial-gradient(circle at 12% 30%, #ff2d00 0 14%, transparent 17%),
           linear-gradient(180deg, #b00028, #4d0016 96%);
         background-size: 150% 190%;
         background-position: 0% 0%;
