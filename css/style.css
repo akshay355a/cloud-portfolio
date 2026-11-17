@@ -69,15 +69,12 @@
       .hero h1 .row span {
         display: inline-block;
         color: transparent;
-        background: conic-gradient(
-            from 20deg,
-            #f7fbff,
-            #4ff8ff,
-            #bba7ff,
-            #ff4fd8,
-            #fff7d6,
-            #f7fbff
-          ) 50% 50% / 220% 220%;
+        background:
+          radial-gradient(90% 90% at 20% 25%, rgba(255, 120, 220, .9), transparent 60%),
+          radial-gradient(90% 100% at 85% 35%, rgba(90, 200, 255, .85), transparent 60%),
+          radial-gradient(110% 90% at 55% 95%, rgba(170, 140, 255, .9), transparent 62%),
+          linear-gradient(105deg, #fdf6ec, #ffe3f2 45%, #dfeaff);
+        background-size: 240% 240%;
         -webkit-background-clip: text;
         background-clip: text;
         text-shadow: 0 10px 28px rgba(0, 0, 0, .28);
@@ -321,12 +318,12 @@
         from { transform: translateY(110%); }
         to { transform: translateY(0); }
       }
-      @keyframes fx-iridescent {
-        0% { filter: hue-rotate(0deg); background-position: 0% 50%; }
-        50% { filter: hue-rotate(180deg); background-position: 100% 50%; }
-        100% { filter: hue-rotate(360deg); background-position: 0% 50%; }
+      @keyframes fx-siri {
+        0% { background-position: 0% 30%, 100% 40%, 50% 100%, 0% 50%; filter: hue-rotate(0deg); }
+        50% { background-position: 100% 55%, 0% 65%, 50% 0%, 100% 50%; filter: hue-rotate(35deg); }
+        100% { background-position: 0% 30%, 100% 40%, 50% 100%, 0% 50%; filter: hue-rotate(0deg); }
       }
-      .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-iridescent 4.5s linear infinite; }
+      .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-siri 12s ease-in-out infinite; }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero h1 .row span { animation: none; }
