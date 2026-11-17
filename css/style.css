@@ -89,18 +89,6 @@
       .hero-meta a { text-decoration: none; }
       .hero-meta a:hover { color: var(--accent); }
 
-      /* ---------- hero focus drift: AKSHAY letters slip in and out of focus ---------- */
-      .hero h1 .row span b {
-        font-weight: inherit;
-        display: inline-block;
-        animation: fx-focus 2.6s ease-in-out infinite;
-        animation-delay: calc(var(--i) * .18s);
-      }
-      @keyframes fx-focus {
-        0%, 100% { filter: blur(0); opacity: 1; }
-        50% { filter: blur(7px); opacity: .35; }
-      }
-
       /* ---------- sections ---------- */
       section { padding: clamp(56px, 8vw, 120px) 0; border-top: 1px solid var(--line); }
       .sec-head {
@@ -322,6 +310,5 @@
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero h1 .row span { animation: none; }
-        .hero h1 .row span b { animation: none; }
         .proj h3 { transition: none; }
       }
