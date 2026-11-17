@@ -97,10 +97,25 @@
         margin-top: clamp(36px, 5vw, 64px);
         padding-top: 16px;
         border-top: 1px solid var(--line);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px clamp(20px, 4vw, 56px);
+        overflow: hidden;
         color: var(--ink-dim);
+      }
+      .hero-meta-track {
+        display: flex;
+        width: max-content;
+        animation: meta-run 30s linear infinite;
+      }
+      .hero-meta:hover .hero-meta-track { animation-play-state: paused; }
+      .meta-set {
+        display: flex;
+        align-items: baseline;
+        gap: clamp(20px, 4vw, 56px);
+        padding-right: clamp(20px, 4vw, 56px);
+        white-space: nowrap;
+      }
+      .meta-sep { color: var(--ink-faint); font-size: 8px; }
+      @keyframes meta-run {
+        to { transform: translateX(-50%); }
       }
       .hero-meta .dot { color: var(--accent); }
       .hero-meta a { text-decoration: none; }
@@ -331,5 +346,7 @@
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero h1 .row span { animation: none; }
+        .hero-meta-track { animation: none; flex-wrap: wrap; width: auto; }
+        .meta-set { flex-wrap: wrap; }
         .proj h3 { transition: none; }
       }
