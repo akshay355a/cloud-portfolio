@@ -66,7 +66,22 @@
         text-transform: uppercase;
       }
       .hero h1 .row { display: block; overflow: hidden; }
-      .hero h1 .row span { display: inline-block; }
+      .hero h1 .row span {
+        display: inline-block;
+        color: transparent;
+        background: conic-gradient(
+            from 20deg,
+            #f7fbff,
+            #4ff8ff,
+            #bba7ff,
+            #ff4fd8,
+            #fff7d6,
+            #f7fbff
+          ) 50% 50% / 220% 220%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-shadow: 0 10px 28px rgba(0, 0, 0, .28);
+      }
       .hero .statement {
         margin: clamp(28px, 4vw, 52px) 0 0;
         max-width: 21em;
@@ -306,7 +321,10 @@
         from { transform: translateY(110%); }
         to { transform: translateY(0); }
       }
-      .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+      @keyframes fx-iridescent {
+        to { filter: hue-rotate(360deg); background-position: 120% 50%; }
+      }
+      .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-iridescent 4.5s linear infinite; }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero h1 .row span { animation: none; }
