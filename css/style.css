@@ -322,7 +322,9 @@
         to { transform: translateY(0); }
       }
       @keyframes fx-iridescent {
-        to { filter: hue-rotate(360deg); background-position: 120% 50%; }
+        0% { filter: hue-rotate(0deg); background-position: 0% 50%; }
+        50% { filter: hue-rotate(180deg); background-position: 100% 50%; }
+        100% { filter: hue-rotate(360deg); background-position: 0% 50%; }
       }
       .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-iridescent 4.5s linear infinite; }
       @media (prefers-reduced-motion: reduce) {
