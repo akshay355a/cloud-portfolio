@@ -80,7 +80,6 @@
         background-position: 0% 0%;
         -webkit-background-clip: text;
         background-clip: text;
-        filter: drop-shadow(0 0 18px #ff4d1a55) drop-shadow(0 0 6px #ffb70355);
       }
       .hero .statement {
         margin: clamp(28px, 4vw, 52px) 0 0;
