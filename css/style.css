@@ -103,7 +103,7 @@
       .hero-meta-track {
         display: flex;
         width: max-content;
-        animation: meta-run 30s linear infinite;
+        animation: meta-run 20s linear infinite;
       }
       .hero-meta:hover .hero-meta-track { animation-play-state: paused; }
       .meta-set {
