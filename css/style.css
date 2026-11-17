@@ -82,22 +82,6 @@
         background-clip: text;
         filter: drop-shadow(0 0 18px #ff4d1a55) drop-shadow(0 0 6px #ffb70355);
       }
-      .hero h1 .row span::after {
-        content: attr(data-text);
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        color: transparent;
-        background:
-          radial-gradient(circle at 32% 46%, #fff2a8 0 15%, transparent 18%),
-          radial-gradient(circle at 78% 72%, #ff7b00 0 22%, transparent 25%),
-          radial-gradient(circle at 60% 18%, #ff2d6f 0 18%, transparent 21%);
-        background-size: 200% 200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        mix-blend-mode: screen;
-        animation: fx-lava-blobs 6.5s ease-in-out infinite;
-      }
       .hero .statement {
         margin: clamp(28px, 4vw, 52px) 0 0;
         max-width: 21em;
@@ -341,14 +325,9 @@
         0%, 100% { background-position: 0% 0%; }
         50% { background-position: 100% 100%; }
       }
-      @keyframes fx-lava-blobs {
-        0%, 100% { background-position: 100% 0%; }
-        50% { background-position: 0% 100%; }
-      }
       .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-lava-drift 9s ease-in-out infinite; }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero h1 .row span { animation: none; }
-        .hero h1 .row span::after { animation: none; }
         .proj h3 { transition: none; }
       }
