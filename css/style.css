@@ -67,17 +67,36 @@
       }
       .hero h1 .row { display: block; overflow: hidden; }
       .hero h1 .row span {
+        position: relative;
         display: inline-block;
         color: transparent;
         background:
-          radial-gradient(140% 130% at 20% 25%, rgba(255, 120, 220, .85), transparent 75%),
-          radial-gradient(140% 150% at 85% 35%, rgba(90, 200, 255, .8), transparent 75%),
-          radial-gradient(160% 130% at 55% 95%, rgba(170, 140, 255, .85), transparent 78%),
-          linear-gradient(105deg, #fdf6ec, #ffe3f2 45%, #dfeaff);
-        background-size: 240% 240%;
+          radial-gradient(circle at 24% 80%, #ffd000 0 19%, transparent 22%),
+          radial-gradient(circle at 74% 26%, #ff7a00 0 21%, transparent 24%),
+          radial-gradient(circle at 50% 58%, #ff0066 0 23%, transparent 26%),
+          radial-gradient(circle at 12% 30%, #ff2d00 0 17%, transparent 20%),
+          linear-gradient(180deg, #b00028, #4d0016 96%);
+        background-size: 150% 190%;
+        background-position: 0% 0%;
         -webkit-background-clip: text;
         background-clip: text;
-        text-shadow: 0 10px 28px rgba(0, 0, 0, .28);
+        filter: drop-shadow(0 0 18px #ff4d1a55) drop-shadow(0 0 6px #ffb70355);
+      }
+      .hero h1 .row span::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        color: transparent;
+        background:
+          radial-gradient(circle at 32% 46%, #fff2a8 0 15%, transparent 18%),
+          radial-gradient(circle at 78% 72%, #ff7b00 0 22%, transparent 25%),
+          radial-gradient(circle at 60% 18%, #ff2d6f 0 18%, transparent 21%);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        mix-blend-mode: screen;
+        animation: fx-lava-blobs 6.5s ease-in-out infinite;
       }
       .hero .statement {
         margin: clamp(28px, 4vw, 52px) 0 0;
@@ -318,14 +337,18 @@
         from { transform: translateY(110%); }
         to { transform: translateY(0); }
       }
-      @keyframes fx-siri {
-        0% { background-position: 0% 30%, 100% 40%, 50% 100%, 0% 50%; }
-        50% { background-position: 100% 55%, 0% 65%, 50% 0%, 100% 50%; }
-        100% { background-position: 0% 30%, 100% 40%, 50% 100%, 0% 50%; }
+      @keyframes fx-lava-drift {
+        0%, 100% { background-position: 0% 0%; }
+        50% { background-position: 100% 100%; }
       }
-      .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-siri 12s ease-in-out infinite; }
+      @keyframes fx-lava-blobs {
+        0%, 100% { background-position: 100% 0%; }
+        50% { background-position: 0% 100%; }
+      }
+      .hero h1 .row span { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, fx-lava-drift 9s ease-in-out infinite; }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .hero h1 .row span { animation: none; }
+        .hero h1 .row span::after { animation: none; }
         .proj h3 { transition: none; }
       }
