@@ -8,9 +8,7 @@
               hour12: false
             });
             var a = document.getElementById("clock");
-            var b = document.getElementById("clock2");
             if (a) a.textContent = t;
-            if (b) b.textContent = t;
           } catch (e) { /* clock is decoration; fail silent */ }
         }
         tick();
